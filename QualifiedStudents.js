@@ -4,11 +4,11 @@
 "use strict";
 
 
-getThreshold() //this can just be a static variable now
+getThreshold(); //this can just be a static variable now
 
 
 
-outputGPA()
+outputGPA();
 
 
 
