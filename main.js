@@ -9,12 +9,12 @@ const GradeInput = require("./GradeInput");
 const QualifiedStudents = require("./QualifiedStudents");
 
 
-HomePage.DispalayInfo()
+HomePage.displayInfo();
 
-GradeInput.getGrades()
-GradeInput.outputGPA()
-GradeInput.AddToArray()
+GradeInput.getGrades();
+GradeInput.outputGPA();
+GradeInput.addToArray();
 
-QualifiedStudents.getThreshold()
-QualifiedStudents.outputGPA()
+QualifiedStudents.getThreshold();
+QualifiedStudents.outputGPA();
 
