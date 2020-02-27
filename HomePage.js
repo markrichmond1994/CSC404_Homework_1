@@ -2,4 +2,6 @@
 //This will most likely be a static popup using the alert() function. 
 
 
-displayInfo();
+displayInfo(
+alert("This is the A-Team Internship, you need a GPA higher than a 2.5 to qualify")
+);
