@@ -5,13 +5,14 @@
 
 
 exports.getThreshold = function(){
-  
-}; //this can just be a static variable now
+  var threshold = 2.5; //This is a static variable per Dr. Yang's email
+  return threshold;
+};
 
 
 
 exports.outputGPA = function(){
-  
+  console.log(getThreshold)
 };
 
 
