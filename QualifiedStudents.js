@@ -4,11 +4,15 @@
 "use strict";
 
 
-getThreshold(); //this can just be a static variable now
+exports.getThreshold = function(){
+  
+}; //this can just be a static variable now
 
 
 
-outputGPA();
+exports.outputGPA = function(){
+  
+};
 
 
 
