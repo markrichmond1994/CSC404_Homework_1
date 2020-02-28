@@ -1,10 +1,37 @@
 //This will take the grades using a prompt, cacluate the GPA, and add that data to an array
 
 exports.getGrades = function(){
-var csc141 = prompt("What was your grade for CSC141? (Number grade)","0");
-var csc142 = prompt("What was your grade for CSC142? (Number grade)","0");
-var csc240 = prompt("What was yiur grade for CSC240? (Number grade)","0");
-var csc241 = prompt("What was your grade for CSC241? (Number grade)","0");
+   var schema = {
+    properties: {
+      name: {
+        pattern: /^[a-zA-Z\s\-]+$/,
+        message: 'Name must be only letters, space, or dashes',
+        required: true
+      },
+      csc141: {
+        pattern: /[0-99]+/,
+        message: 'Grade should be within 0-100',
+        required: true
+      },
+      csc142: {
+        pattern: /[0-99]+/,
+        message: 'Grade should be within 0-100',
+        required: true
+      },
+      csc240: {
+        pattern: /[0-99]+/,
+        message: 'Grade should be within 0-100',
+        required: true
+      },
+      csc241: {
+        pattern: /[0-99]+/,
+        message: 'Grade should be within 0-100',
+        required: true
+      }
+    }
+  }
+  
+  //still have to start and log prompt
 };
 
 
