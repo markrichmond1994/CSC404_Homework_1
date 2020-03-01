@@ -1,5 +1,8 @@
 //This will take the grades using a prompt, cacluate the GPA, and add that data to an array
 
+
+var gpa;
+
 exports.getGrades = function(){
    var schema = {
     properties: {
@@ -30,16 +33,17 @@ exports.getGrades = function(){
       }
     }
   }
-  
-  //still have to start and log prompt
-};
-
-
+  var prompt = require('prompt');
+  prompt.start();
+  prompt.get(schema, function (err, result){
+    gpa = ((result.csc141 + result.csc142 + result.csc240 + result.csc241)/4); 
+  });
+}
 
 
 exports.outputGPA = function(){
-var gpa = ((csc141 + csc142 + csc240 + csc241)/100) //theres a chance the math for this is wrong, i didnt calculate anything yet
-};
+  return gpa;
+}
 
 
 

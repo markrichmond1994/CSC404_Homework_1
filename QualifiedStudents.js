@@ -3,16 +3,16 @@
 
 "use strict";
 
-
+var threshold = 2.5; //This is a static variable per Dr. Yang's email
 exports.getThreshold = function(){
-  var threshold = 2.5; //This is a static variable per Dr. Yang's email
+  
   return threshold;
 };
 
 
 
 exports.outputGPA = function(){
-  console.log(getThreshold)
+  console.log(threshold);
 };
 
 
