@@ -12,8 +12,10 @@ const QualifiedStudents = require("./QualifiedStudents");
 HomePage.displayInfo();
 
 GradeInput.getGrades();
-GradeInput.outputGPA();
-GradeInput.addToArray();
+
+GradeInput.addToArray(GradeInput.outputName,GradeInput.outputGPA());
+
+GradeInput.printArray();
 
 QualifiedStudents.getThreshold();
 QualifiedStudents.outputGPA();

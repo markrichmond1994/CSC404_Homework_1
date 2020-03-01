@@ -2,6 +2,8 @@
 
 
 var gpa;
+var name;
+let students =[];
 
 exports.getGrades = function(){
    var schema = {
@@ -36,7 +38,8 @@ exports.getGrades = function(){
   var prompt = require('prompt');
   prompt.start();
   prompt.get(schema, function (err, result){
-    gpa = ((result.csc141 + result.csc142 + result.csc240 + result.csc241)/4); 
+    gpa = ((result.csc141 + result.csc142 + result.csc240 + result.csc241)/4);
+    name = result.name; 
   });
 }
 
@@ -45,11 +48,18 @@ exports.outputGPA = function(){
   return gpa;
 }
 
+exports.outputName = function(){
+  return name;
+}
 
 
 
 
-
-exports.addToArray = function(){
+exports.addToArray = function(name, gpa){
+students = students.push([name,gpa]);
 //idk where to start there, unsure if im making a single array with the gpa or a 2d array with both the students name and gpa
 };
+
+exports.printArray = function(){
+  console.log(students);
+}
