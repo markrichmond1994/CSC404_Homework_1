@@ -131,12 +131,11 @@ exports.outputName = function(){
   return name;
 }
 
-
-
-
 exports.addToArray = function(name, gpa){
 students = students.push([name,gpa]);
 };
+
+exports.students = students;
 
 exports.printArray = function(){
   console.log(students);
