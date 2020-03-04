@@ -5,16 +5,25 @@
 
 var threshold = 2.5; //This is a static variable per Dr. Yang's email
 exports.getThreshold = function(){
-  
   return threshold;
 };
-
-
 
 exports.outputGPA = function(){
   console.log(threshold);
 };
 
+const GradeInput = require("./GradeInput");
+exports.students = students;
+
+for (var i = 0; i < GradeInput.students.length; i++)
+{
+  if (GradeInput.students.gpa[i] > 2.5)   //not sure if valid syntax for comparison because students is an array of objects
+  {
+    console.log(GradeInput.students[i]);
+  }
+  else
+    continue;
+}
 
 
 
