@@ -13,7 +13,6 @@ exports.outputGPA = function(){
 };
 
 const GradeInput = require("./GradeInput");
-exports.students = students;
 
 for (var i = 0; i < GradeInput.students.length; i++)
 {
