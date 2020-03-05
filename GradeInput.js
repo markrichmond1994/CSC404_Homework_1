@@ -11,7 +11,7 @@ var csc240 = {Value: 0};
 var csc241 = {Value: 0};
 
 exports.students = students;
-exports.getGrades = function(){
+getGrades = function(){
 
    var schema = {
     properties: {
@@ -39,11 +39,18 @@ exports.getGrades = function(){
         pattern: /[A-F][\+|\-]?|[a-f][\+|\-]?/,
         message: 'Grade should be a letter grade',
         required: true
+      },
+      addmore:{
+         pttern: /[y|z]|[Y|Z]/,
+        message: 'Enter more Students?',
+        required: true
       }
     }
   }
+  var flag = true;
   var prompt = require('prompt');
   prompt.start();
+
   prompt.get(schema, function (err, result){
    processPrompt(result.csc141,csc141);
    processPrompt(result.csc142,csc142);
@@ -51,12 +58,24 @@ exports.getGrades = function(){
    processPrompt(result.csc241,csc241);
     gpa = ((csc141.Value + csc142.Value + csc240.Value + csc241.Value)/4);
     name = result.name;
-    
     addToArray(name,gpa);
-    var QualifiedStudents = require('./QualifiedStudents');
-    QualifiedStudents.outputGPA();
-  });
-}
+    if (result.addmore.toUpperCase() == "Y"){
+      flag = true;
+      getGrades();
+   }
+   else{
+      flag = false;
+      var QualifiedStudents = require('./QualifiedStudents'); 
+      QualifiedStudents.outputGPA();
+   }
+    
+    
+  })
+    
+   }
+  exports.getGrades = getGrades;
+
+
 processPrompt = function(input,output){ //Takes the inputted letter grade and resolves to a number
    switch (input.toUpperCase()) {
       case 'A+':
