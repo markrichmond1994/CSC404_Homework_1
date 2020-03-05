@@ -2,23 +2,77 @@
 
 "use strict";
 
-
 const HomePage = require("./HomePage");
 const GradeInput = require("./GradeInput");
 const QualifiedStudents = require("./QualifiedStudents");
 
 //Array of names for testing
-let names = [""," ","Mark Cameron Richmond","Si Hu","Abcdefghijklmnop Qrstuvwxyz"]
+let names = [""," ","Mark Cameron Richmond","Si Hu","Zachary Colangelo","Abcdefghijklmnop Qrstuvwxyzabcdefghijklmnopshidbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"];
 
-//Array of grades to facilitate testing by checking against. Letter Grade, Upper Bound, Lower Bound.
-let grades = [["A","A-","B+","B","B-","C+","C","C-","D+","D","D-","F"],[100,92,89,86,82,79,76,72,69,66,62,59][93,90,87,83,80,77,73,70,67,63,60,0]];
+//Array of grades to facilitate testing by checking against. Letter Grade, Upper Bound, Lower Bound, Outside of boundry.
+let grades = ["A","A-","B+","B","B-","C+","C","C-","D+","D","D-","F","Z"];
 
 //All of these will be called multiple times with varing inputs to test that the functions return the expected output
 HomePage.displayInfo();
 
-GradeInput.getGrades();
-GradeInput.outputGPA();
-GradeInput.addToArray();
+var name, csc141, csc142, csc240, csc241, gpa141, gpa142, gpa240, gpa241, gpa;
 
-QualifiedStudents.getThreshold();
-QualifiedStudents.outputGPA();
+function convertGrade(grade) {
+    switch (grade) {
+        case 'A':
+           return 4.0;
+           break;
+        case 'A-':
+           return 3.67;
+           break;
+        case 'B+':
+           return 3.33;
+           break;
+        case 'B':
+           return 3.0;
+           break;
+        case 'B-':
+           return 2.67;
+           break;
+        case 'C+':
+           return 2.33;
+           break;
+        case 'C':
+           return 2;
+           break;
+        case 'C-':
+           return 1.67;
+           break;
+        case 'D+':
+           return 1.33;
+           break;
+        case 'D':
+           return 1;
+           break;
+        case 'D-':
+            return 0.67
+        case 'F':
+           return 0;
+           break;
+        default:
+           return -1;
+        }
+}
+
+//use names and grades arrays to randomly test values
+var i;
+for (i = 0; i < 10; i++){
+   name = names[Math.floor((Math.random() * 5) + 1)];
+   csc141 = grades[Math.floor((Math.random() * 12) + 1)];
+   csc142 = grades[Math.floor((Math.random() * 12) + 1)];
+   csc240 = grades[Math.floor((Math.random() * 12) + 1)];
+   csc241 = grades[Math.floor((Math.random() * 12) + 1)];
+   gpa141 = convertGrade(csc141);
+   gpa142 = convertGrade(csc142);
+   gpa240 = convertGrade(csc240);
+   gpa241 = convertGrade(csc241);
+
+   gpa = ((gpa141 + gpa142 + gpa240 + gpa241)/4);
+   console.log("Name: " + name);
+   console.log("GPA: " + gpa + "\n");
+}
