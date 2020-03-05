@@ -47,9 +47,10 @@ exports.getGrades = function(){
     name = result.name;
     
     addToArray(name,gpa);
+    return 0;
   });
 }
-processPrompt = function(csc141Input,csc142Input,csc240Input,csc241Input){
+processPrompt = function(csc141Input,csc142Input,csc240Input,csc241Input){ //Takes the inputted letter grade and resolves to a number
    switch (csc141Input) {
       case 'A':
          csc141 = 4;
@@ -144,6 +145,7 @@ exports.outputName = function(){
 
 addToArray = function(name, gpa){
 students.push([name,gpa]);
+console.log("test output\n");
 console.log(students);
 }
 exports.addToArray = addToArray; //export statement for debug

@@ -13,9 +13,8 @@ HomePage.displayInfo();
 
 GradeInput.getGrades();
 
-GradeInput.addToArray(GradeInput.outputName,GradeInput.outputGPA());
-
-GradeInput.printArray();
+//GradeInput.addToArray(GradeInput.outputName,GradeInput.outputGPA()); this is no longer needed
+//GradeInput.printArray();
 
 QualifiedStudents.getThreshold();
 QualifiedStudents.outputGPA();
