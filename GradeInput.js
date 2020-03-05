@@ -42,7 +42,7 @@ getGrades = function(){
       },
       addmore:{
          pttern: /[y|z]|[Y|Z]/,
-        message: 'Enter more Students?',
+        message: 'Enter more Students? (y/n)',
         required: true
       }
     }
