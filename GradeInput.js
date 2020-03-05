@@ -5,7 +5,10 @@ var gpa;
 var name;
 let students = [];
 
-var csc141,csc142,csc240,csc241;
+var csc141 = {Value: 0};
+var csc142 = {Value: 0};
+var csc240 = {Value: 0};
+var csc241 = {Value: 0};
 
 exports.students = students;
 exports.getGrades = function(){
@@ -42,8 +45,11 @@ exports.getGrades = function(){
   var prompt = require('prompt');
   prompt.start();
   prompt.get(schema, function (err, result){
-   processPrompt(result.csc141,result.csc142,result.csc240,result.csc240);
-    gpa = ((csc141 + csc142 + csc240 + csc241)/4);
+   processPrompt(result.csc141,csc141);
+   processPrompt(result.csc142,csc142);
+   processPrompt(result.csc240,csc240);
+   processPrompt(result.csc241,csc241);
+    gpa = ((csc141.Value + csc142.Value + csc240.Value + csc241.Value)/4);
     name = result.name;
     
     addToArray(name,gpa);
@@ -51,87 +57,51 @@ exports.getGrades = function(){
     QualifiedStudents.outputGPA();
   });
 }
-processPrompt = function(csc141Input,csc142Input,csc240Input,csc241Input){ //Takes the inputted letter grade and resolves to a number
-   switch (csc141Input.toUpperCase()) {
+processPrompt = function(input,output){ //Takes the inputted letter grade and resolves to a number
+   switch (input.toUpperCase()) {
+      case 'A+':
+         output.Value = 4;
+         break;
       case 'A':
-         csc141 = 4;
+         output.Value = 4;
+         break;
+      case 'A-':
+         output.Value = 3.67;
+         break;
+      case 'B+':
+         output.Value = 3.33;
          break;
       case 'B':
-         csc141 = 3;
+         output.Value = 3;
+         break;
+      case 'B-':
+         output.Value = 2.67;
+         break;
+      case 'C+':
+         output.Value = 2.33;
          break;
       case 'C':
-         csc141 = 2;
+         output.Value = 2;
+         break;
+      case 'C-':
+         output.Value = 1.67;
+         break;
+      case 'D+':
+         output.Value = 1.33;
          break;
       case 'D':
-         csc141 = 1;
+         output.Value = 1;
+         break;
+      case 'D-':
+         output.Value = .67;
          break;
       case 'F':
-         csc141 = 0;
+         output.Value = 0;
          break;
       default:
-         csc141 = 0;
+         output.Value = 0;
    }
    
-   switch (csc142Input.toUpperCase()) {
-      case 'A':
-         csc142 = 4;
-         break;
-      case 'B':
-         csc142 = 3;
-         break;
-      case 'C':
-         csc141 = 2;
-         break;
-      case 'D':
-         csc142 = 1;
-         break;
-      case 'F':
-         csc142 = 0;
-         break;
-      default:
-         csc142 = 0;
-   }
-   
-   switch (csc240Input.toUpperCase()) {
-      case 'A':
-         csc240 = 4;
-         break;
-      case 'B':
-         csc240 = 3;
-         break;
-      case 'C':
-         csc240 = 2;
-         break;
-      case 'D':
-         csc240 = 1;
-         break;
-      case 'F':
-         csc240 = 0;
-         break;
-      default:
-         csc240 = 0;
-   }
-   
-   switch (csc241Input.toUpperCase()) {
-      case 'A':
-         csc241 = 4;
-         break;
-      case 'B':
-         csc241 = 3;
-         break;
-      case 'C':
-         csc241 = 2;
-         break;
-      case 'D':
-         csc241 = 1;
-         break;
-      case 'F':
-         csc241 = 0;
-         break;
-      default:
-         csc241 = 0;
-   }
-
 }
 exports.processPrompt = processPrompt;
 

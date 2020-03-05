@@ -16,7 +16,7 @@ for (var i = 0; i < GradeInput.students.length; i++)
 {
   if (GradeInput.students[i][1] > 2.5)   //not sure if valid syntax for comparison because students is an array of objects
   {
-    console.log(GradeInput.students[i][0]);
+    console.log("Student: " + GradeInput.students[i][0] + " GPA: " + GradeInput.students[i][1]);
   }
   else
     continue;
