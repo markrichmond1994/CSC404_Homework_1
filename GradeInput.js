@@ -49,8 +49,8 @@ exports.getGrades = function(){
     addToArray(name,gpa);
   });
 }
-processPrompt = function(csc141,csc142,csc240,csc241){
-   switch (csc141) {
+processPrompt = function(csc141Input,csc142Input,csc240Input,csc241Input){
+   switch (csc141Input) {
       case 'A':
          csc141 = 4;
          break;
@@ -70,7 +70,7 @@ processPrompt = function(csc141,csc142,csc240,csc241){
          csc141 = 0;
    }
    
-   switch (csc142) {
+   switch (csc142Input) {
       case 'A':
          csc142 = 4;
          break;
@@ -90,7 +90,7 @@ processPrompt = function(csc141,csc142,csc240,csc241){
          csc142 = 0;
    }
    
-   switch (csc240) {
+   switch (csc240Input) {
       case 'A':
          csc240 = 4;
          break;
@@ -110,7 +110,7 @@ processPrompt = function(csc141,csc142,csc240,csc241){
          csc240 = 0;
    }
    
-   switch (csc241) {
+   switch (csc241Input) {
       case 'A':
          csc241 = 4;
          break;
