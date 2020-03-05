@@ -52,7 +52,7 @@ exports.getGrades = function(){
   });
 }
 processPrompt = function(csc141Input,csc142Input,csc240Input,csc241Input){ //Takes the inputted letter grade and resolves to a number
-   switch (csc141Input) {
+   switch (csc141Input.toUpperCase()) {
       case 'A':
          csc141 = 4;
          break;
@@ -72,7 +72,7 @@ processPrompt = function(csc141Input,csc142Input,csc240Input,csc241Input){ //Tak
          csc141 = 0;
    }
    
-   switch (csc142Input) {
+   switch (csc142Input.toUpperCase()) {
       case 'A':
          csc142 = 4;
          break;
@@ -92,7 +92,7 @@ processPrompt = function(csc141Input,csc142Input,csc240Input,csc241Input){ //Tak
          csc142 = 0;
    }
    
-   switch (csc240Input) {
+   switch (csc240Input.toUpperCase()) {
       case 'A':
          csc240 = 4;
          break;
@@ -112,7 +112,7 @@ processPrompt = function(csc141Input,csc142Input,csc240Input,csc241Input){ //Tak
          csc240 = 0;
    }
    
-   switch (csc241Input) {
+   switch (csc241Input.toUpperCase()) {
       case 'A':
          csc241 = 4;
          break;
