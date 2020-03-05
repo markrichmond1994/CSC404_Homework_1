@@ -14,22 +14,22 @@ exports.getGrades = function(){
         required: true
       },
       csc141: {
-        pattern: /[A-F][\+|\-]?|[a-f][\+|\-]?/,
+        pattern: /[A-F][\+|\-]?|[a-f][\+|\-]?/, //Idk if we want to open this can or worms or not
         message: 'Grade should be a letter grade',
         required: true
       },
       csc142: {
-        pattern: /[A-F]/,
+        pattern: /[A-F][\+|\-]?|[a-f][\+|\-]?/,
         message: 'Grade should be a letter grade',
         required: true
       },
       csc240: {
-        pattern: /[A-F]/,
+        pattern: /[A-F][\+|\-]?|[a-f][\+|\-]?/,
         message: 'Grade should be a letter grade',
         required: true
       },
       csc241: {
-        pattern: /[A-F]/,
+        pattern: /[A-F][\+|\-]?|[a-f][\+|\-]?/,
         message: 'Grade should be a letter grade',
         required: true
       }
