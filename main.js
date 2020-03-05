@@ -17,5 +17,5 @@ GradeInput.getGrades();
 //GradeInput.printArray();
 
 QualifiedStudents.getThreshold();
-QualifiedStudents.outputGPA();
+//QualifiedStudents.outputGPA();
 

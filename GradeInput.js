@@ -47,7 +47,8 @@ exports.getGrades = function(){
     name = result.name;
     
     addToArray(name,gpa);
-    return 0;
+    var QualifiedStudents = require('./QualifiedStudents');
+    QualifiedStudents.outputGPA();
   });
 }
 processPrompt = function(csc141Input,csc142Input,csc240Input,csc241Input){ //Takes the inputted letter grade and resolves to a number
@@ -145,8 +146,8 @@ exports.outputName = function(){
 
 addToArray = function(name, gpa){
 students.push([name,gpa]);
-console.log("test output\n");
-console.log(students);
+//console.log("test output\n");
+//console.log(students);
 }
 exports.addToArray = addToArray; //export statement for debug
 

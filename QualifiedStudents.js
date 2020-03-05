@@ -12,10 +12,9 @@ exports.getThreshold = function(){
 const GradeInput = require("./GradeInput");
 
 exports.outputGPA = function(){
-console.log("Test");
 for (var i = 0; i < GradeInput.students.length; i++)
 {
-  if (GradeInput.students.gpa[i][1] > 2.5)   //not sure if valid syntax for comparison because students is an array of objects
+  if (GradeInput.students[i][1] > 2.5)   //not sure if valid syntax for comparison because students is an array of objects
   {
     console.log(GradeInput.students[i][0]);
   }
