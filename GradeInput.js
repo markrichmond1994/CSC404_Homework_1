@@ -3,9 +3,13 @@
 
 var gpa;
 var name;
-let students =[];
+let students = [];
 
+var csc141,csc142,csc240,csc241;
+
+exports.students = students;
 exports.getGrades = function(){
+
    var schema = {
     properties: {
       name: {
@@ -39,8 +43,10 @@ exports.getGrades = function(){
   prompt.start();
   prompt.get(schema, function (err, result){
    processPrompt(result.csc141,result.csc142,result.csc240,result.csc240);
-    gpa = ((result.csc141 + result.csc142 + result.csc240 + result.csc241)/4);
-    name = result.name; 
+    gpa = ((csc141 + csc142 + csc240 + csc241)/4);
+    name = result.name;
+    
+    addToArray(name,gpa);
   });
 }
 processPrompt = function(csc141,csc142,csc240,csc241){
@@ -136,11 +142,12 @@ exports.outputName = function(){
   return name;
 }
 
-exports.addToArray = function(name, gpa){
-students = students.push([name,gpa]);
-};
+addToArray = function(name, gpa){
+students.push([name,gpa]);
+console.log(students);
+}
+exports.addToArray = addToArray; //export statement for debug
 
-exports.students = students;
 
 exports.printArray = function(){
   console.log(students);
